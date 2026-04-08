@@ -1,0 +1,755 @@
+{
+  "info": {
+    "_postman_id": "92931ff5-4e43-4a60-81d4-c9e25f5f9c5a",
+    "name": "simple-ads-api-",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47901935",
+    "_collection_link": "https://go.postman.co/collection/47901935-92931ff5-4e43-4a60-81d4-c9e25f5f9c5a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Settings",
+      "item": [
+        {
+          "name": "Get All Settings",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/settings",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "settings"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get All Settings Example",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/settings",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "settings"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.26"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 04 Apr 2026 23:08:15 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"message\": \"Settings  Retrieved SuccessFuly\",\n    \"data\": {\n        \"Site Name\": \"موقع الإعلانات المبوبة\",\n        \"About Us\": \"موقع الإعلانات المبوبة الأفضل في مصر، يمكنك نشر وشراء وبيع أي نوع من الإعلانات بسهولة وأمان.\",\n        \"Address\": \" طنطا، شارع البحر \",\n        \"Phone\": \"01225399159\"\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Location",
+      "item": [
+        {
+          "name": "Cities",
+          "item": [
+            {
+              "name": "Get All Cities",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": []
+                },
+                "url": {
+                  "raw": "{{url}}/api/cities",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "cities"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Add New  City",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "المحلة الكبرى \n",
+                      "type": "text",
+                      "uuid": "f7ca7b04-ad13-41bb-8ae5-48770047de02"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/cities",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "cities"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update  City",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "طنطا ",
+                      "type": "text",
+                      "uuid": "f7ca7b04-ad13-41bb-8ae5-48770047de02"
+                    },
+                    {
+                      "key": "_method",
+                      "value": "PUT",
+                      "type": "text",
+                      "uuid": "c1118e28-9c7c-43f2-976b-26e266680a9e"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/cities/5",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "cities",
+                    "5"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete City",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "f7ca7b04-ad13-41bb-8ae5-48770047de02",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/cities/4",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "cities",
+                    "4"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Districts",
+          "item": [
+            {
+              "name": "Get All Districts",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/districts",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "districts"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Show District",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/districts/2",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "districts",
+                    "2"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Add New District",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "ش- حسن رضوان",
+                      "type": "text",
+                      "uuid": "d6e67ddb-aa5d-427d-b831-2d5aa2514c2b"
+                    },
+                    {
+                      "key": "city_id",
+                      "value": "1",
+                      "type": "text",
+                      "uuid": "23e8ba22-b897-4231-a334-7abc21bfbe77"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/districts",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "districts"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Districts",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "ش- الاشرف\n\n",
+                      "type": "text",
+                      "uuid": "d6e67ddb-aa5d-427d-b831-2d5aa2514c2b"
+                    },
+                    {
+                      "key": "city_id",
+                      "value": "5",
+                      "type": "text",
+                      "uuid": "23e8ba22-b897-4231-a334-7abc21bfbe77"
+                    },
+                    {
+                      "key": "_method",
+                      "value": "PUT",
+                      "type": "text",
+                      "uuid": "bba3df1b-2f5c-4ce0-bb99-3f6b036887d6"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/districts/5",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "districts",
+                    "5"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete District",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{url}}/api/districts/7",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "districts",
+                    "7"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "New Folder",
+          "item": []
+        }
+      ]
+    },
+    {
+      "name": "Messages",
+      "item": [
+        {
+          "name": "Get All Message",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "المحلة الكبرى \n",
+                  "type": "text",
+                  "uuid": "f7ca7b04-ad13-41bb-8ae5-48770047de02"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/messages",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "messages"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add  New Message",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "samir elsayesd",
+                  "type": "text",
+                  "uuid": "f7ca7b04-ad13-41bb-8ae5-48770047de02"
+                },
+                {
+                  "key": "email",
+                  "value": "samir@gmail.com",
+                  "type": "text",
+                  "uuid": "57cf60e2-a430-4a60-a5a8-1ee1610c86cc"
+                },
+                {
+                  "key": "phone",
+                  "value": "0000000000",
+                  "type": "text",
+                  "uuid": "83867345-d828-4b9f-b7e6-bd67f0d81e4a"
+                },
+                {
+                  "key": "message",
+                  "value": "hello ",
+                  "type": "text",
+                  "uuid": "483adb59-a3de-463b-8a02-f53ab530cfcb"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/messages",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "messages"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Message",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "المحلة الكبرى \n",
+                  "type": "text",
+                  "uuid": "f7ca7b04-ad13-41bb-8ae5-48770047de02"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/messages/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "messages",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "samir",
+                  "type": "text",
+                  "uuid": "f7ca7b04-ad13-41bb-8ae5-48770047de02"
+                },
+                {
+                  "key": "email",
+                  "value": "samir@gmail.com",
+                  "type": "text",
+                  "uuid": "67520969-226f-4cb0-a532-2d4d97b185a7"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678\n",
+                  "type": "text",
+                  "uuid": "1feb637a-00f4-479c-906d-30c0f907bb04"
+                },
+                {
+                  "key": "",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "482ccde6-f611-4dce-b3d5-5be86553e66a",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/auth/register",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "samir",
+                  "type": "text",
+                  "uuid": "f7ca7b04-ad13-41bb-8ae5-48770047de02"
+                },
+                {
+                  "key": "email",
+                  "value": "samir@gmail.com",
+                  "type": "text",
+                  "uuid": "67520969-226f-4cb0-a532-2d4d97b185a7"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678\n",
+                  "type": "text",
+                  "uuid": "1feb637a-00f4-479c-906d-30c0f907bb04"
+                },
+                {
+                  "key": "",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "482ccde6-f611-4dce-b3d5-5be86553e66a",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/auth/login",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "23|qmCyUvJnxKqGyAZXkuYrEqej1DzItqGo9Re7uEQt9755f51f",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/auth/logout",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "url",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
