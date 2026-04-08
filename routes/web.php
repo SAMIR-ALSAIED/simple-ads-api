@@ -33,6 +33,9 @@ Route::prefix('districts')->middleware('auth')->group(function() {
 Route::prefix('messages')->middleware('auth')->group(function() {
     Route::get('/', [MesaageController::class,'index'])->name('messages.index');
     Route::get('/create', [MesaageController::class,'create'])->name('messages.create');
+    Route::post('/', [MesaageController::class,'store'])->name('messages.store');
+    Route::get('/{message}', [MesaageController::class,'edit'])->name('messages.edit');
+    Route::put('/{message}', [MesaageController::class,'update'])->name('messages.update');
     Route::delete('/{message}', [MesaageController::class,'destroy'])->name('messages.destroy');
 });
 
